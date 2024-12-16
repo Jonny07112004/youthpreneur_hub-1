@@ -20,6 +20,7 @@ class _ProfileSectionState extends State<ProfileSectionPage> {
   }
 
   Future<void> _loadUserData() async {
+    
     final session = Supabase.instance.client.auth.currentSession;
     if (session != null) {
       final user = session.user;

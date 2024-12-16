@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import '../datamodel/service_product_data_model.dart';
 import '../datamodel/services_data_model.dart';
 
@@ -20,7 +21,7 @@ class _ServicesPageState extends State<ServicesPage> {
         ),
         centerTitle: true,
         elevation: 5,
-        backgroundColor: Colors.teal,
+        backgroundColor: Colors.white,
       ),
       body: StreamBuilder<List<ServicesDataModel>>(
         stream: ServicesDataModel.fetchServicesStream(),
@@ -73,7 +74,9 @@ class _ServicesPageState extends State<ServicesPage> {
                       child: Text(
                         service.description ?? 'No Description',
                         style:
-                        const TextStyle(fontSize: 14, color: Colors.grey),
+                        const TextStyle(
+                          fontSize: 14, color: Colors.grey,
+                          ),
                         maxLines: 2,
                         overflow: TextOverflow.ellipsis,
                       ),
